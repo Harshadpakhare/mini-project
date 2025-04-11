@@ -1,0 +1,232 @@
+/*-----------------------------------*
+ * #ROOT VARIABLES
+\*-----------------------------------*/
+
+:root {
+    --bright-navy-blue: hsl(217, 100%, 50%);
+    --gunmetal: hsl(205, 36%, 17%);
+    --gainsboro: hsl(0, 0%, 85%);
+    --white: #ffffff;
+    --onyx: hsl(0, 0%, 27%);
+  
+    --radius-15: 15px;
+    --radius-25: 25px;
+    --section-padding: 60px;
+    --transition: 0.3s ease;
+  
+    --fs-5: 14px;
+    --fs-6: 13px;
+    --fs-7: 12px;
+    --ff-montserrat: 'Montserrat', sans-serif;
+    --fw-500: 500;
+  }
+  
+  /* Gallery */
+  .gallery-image {
+    width: 100%;
+    height: 100%;
+    border-radius: var(--radius-15);
+    overflow: hidden;
+  }
+  
+  .gallery-item:nth-child(3) {
+    grid-area: 1 / 2 / 3 / 3;
+  }
+  
+  .gallery-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* CTA */
+  .cta {
+    background: var(--bright-navy-blue);
+    padding-block: var(--section-padding);
+    color: var(--white);
+  }
+  
+  .cta .section-text {
+    font-size: var(--fs-5);
+  }
+  
+  /* Footer */
+  .footer-top {
+    background: var(--gunmetal);
+    padding-block: var(--section-padding);
+    color: var(--gainsboro);
+  }
+  
+  .footer-brand img {
+    width: 180px;
+  }
+  
+  .footer-text, .contact-text, .form-text, .contact-link, address {
+    font-size: var(--fs-5);
+    line-height: 1.7;
+    color: var(--gainsboro);
+  }
+  
+  .contact-title {
+    font-family: var(--ff-montserrat);
+    font-weight: var(--fw-500);
+    margin-bottom: 30px;
+    position: relative;
+  }
+  
+  .contact-title::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background: var(--bright-navy-blue);
+  }
+  
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .footer-form .input-field {
+    background: var(--white);
+    font-size: var(--fs-5);
+    padding: 15px 20px;
+    border-radius: 100px;
+    margin-bottom: 10px;
+  }
+  
+  .footer-form .btn {
+    width: 100%;
+  }
+  
+  .footer-bottom {
+    background: var(--gunmetal);
+    padding-block: 20px;
+    text-align: center;
+    color: var(--gainsboro);
+  }
+  
+  .footer-bottom-list {
+    display: flex;
+    justify-content: center;
+    gap: 21px;
+  }
+  
+  .footer-bottom-link {
+    color: var(--gainsboro);
+    font-size: var(--fs-7);
+    transition: var(--transition);
+  }
+  
+  .footer-bottom-link:is(:hover, :focus) {
+    color: var(--white);
+  }
+  
+  /* Go to Top */
+  .go-top {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    width: 35px;
+    height: 35px;
+    background: var(--bright-navy-blue);
+    color: var(--white);
+    display: grid;
+    place-items: center;
+    font-size: 18px;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px hsla(0, 0%, 0%, 0.5);
+    opacity: 0;
+    transform: translateY(10px);
+    visibility: hidden;
+    transition: var(--transition);
+  }
+  
+  .go-top.active {
+    opacity: 0.8;
+    transform: translateY(0);
+    visibility: visible;
+  }
+  
+  .go-top:is(:hover, :focus) {
+    opacity: 1;
+  }
+  
+  /* Responsive */
+  @media (min-width: 580px) {
+    .container {
+      max-width: 580px;
+      margin-inline: auto;
+    }
+  
+    .btn {
+      font-size: 16px;
+      padding: 12px 30px;
+    }
+  
+    section:not(.cta) .section-subtitle,
+    section:not(.cta) .section-title,
+    section:not(.cta) .section-text {
+      text-align: center;
+    }
+  
+    .footer .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+  
+    .footer-bottom {
+      text-align: left;
+    }
+  
+    .footer-bottom-list {
+      justify-content: flex-end;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .container {
+      max-width: 800px;
+    }
+  
+    .section-text {
+      max-width: 60ch;
+      margin-inline: auto;
+    }
+  
+    .footer-top .container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 50px;
+    }
+  
+    .footer-form {
+      grid-column: unset;
+    }
+  }
+  
+  @media (min-width: 992px) {
+    .container {
+      max-width: 1050px;
+    }
+  
+    .footer-form .btn {
+      width: 100%;
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    :root {
+      --section-padding: 100px;
+    }
+  
+    .container {
+      max-width: 1180px;
+    }
+  }
+  
